@@ -12,7 +12,11 @@ export default function RootLayout() {
     <DatabaseProvider database={database}>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="add-transaction" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="accounts" />
+        <Stack.Screen
+          name="add-transaction"
+          options={{ presentation: 'modal' }}
+        />
         <Stack.Screen name="transaction/[id]" />
       </Stack>
       <StatusBar style="auto" />
