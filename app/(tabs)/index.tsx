@@ -24,6 +24,21 @@ export default function DashboardScreen() {
           </Button>
         </View>
       </Card>
+
+      <Card className="mt-4">
+        <Text className="text-lg font-semibold text-slate-950">Categories</Text>
+        <Text className="mt-1 text-sm text-slate-600">
+          Add parent categories and one-level child categories.
+        </Text>
+        <View className="mt-4">
+          <Button
+            onPress={() => router.push('/categories')}
+            variant="secondary"
+          >
+            Manage Categories
+          </Button>
+        </View>
+      </Card>
     </View>
   );
 }

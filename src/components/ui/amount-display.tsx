@@ -1,5 +1,6 @@
 import { Text } from 'react-native';
 
+import { CURRENCY_DIVISORS } from '@/lib';
 import type { CurrencyCode, MoneyAmount } from '@/lib';
 
 interface AmountDisplayProps {
@@ -14,19 +15,23 @@ const currencyLocales: Record<CurrencyCode, string> = {
   CAD: 'en-CA',
 };
 
-const currencyDivisors: Record<CurrencyCode, number> = {
-  TWD: 1,
-  CAD: 100,
-};
-
-export function AmountDisplay({ amount, className, currency = 'TWD', showSign = false }:
-  AmountDisplayProps) {
+export function AmountDisplay({
+  amount,
+  className,
+  currency = 'TWD',
+  showSign = false,
+}: AmountDisplayProps) {
   const formattedAmount = new Intl.NumberFormat(currencyLocales[currency], {
     currency,
     style: 'currency',
-  }).format(amount / currencyDivisors[currency]);
+  }).format(amount / CURRENCY_DIVISORS[currency]);
 
   const sign = showSign && amount > 0 ? '+' : '';
 
-  return <Text className={`font-semibold ${className ?? ''}`}>{sign}{formattedAmount}</Text>;
+  return (
+    <Text className={`font-semibold ${className ?? ''}`}>
+      {sign}
+      {formattedAmount}
+    </Text>
+  );
 }

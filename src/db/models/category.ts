@@ -7,10 +7,9 @@ export class Category extends Model {
   static table = 'categories';
 
   @field('name') name!: string;
-  @field('parent_id') parentId?: string;
+  @field('parent_id') parentId!: string | null;
   @field('budget_type') budgetType!: BudgetType;
-  @field('icon') icon?: string;
+  @field('icon') icon!: string | null;
   @field('sort_order') sortOrder!: number;
   @field('is_active') isActive!: boolean;
 }
-

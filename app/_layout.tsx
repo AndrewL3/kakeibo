@@ -13,6 +13,7 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="accounts" />
+        <Stack.Screen name="categories" />
         <Stack.Screen
           name="add-transaction"
           options={{ presentation: 'modal' }}

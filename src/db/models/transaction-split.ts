@@ -9,5 +9,5 @@ export class TransactionSplit extends Model {
   @field('transaction_id') transactionId!: string;
   @field('category_id') categoryId!: string;
   @field('amount') amount!: MoneyAmount;
-  @field('notes') notes?: string;
+  @field('notes') notes!: string | null;
 }
